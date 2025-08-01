@@ -1,7 +1,6 @@
 {
   "name": "video-server",
   "version": "1.0.0",
-  "description": "سرویس ساده Node.js برای ارائه لینک مستقیم ویدیو",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
