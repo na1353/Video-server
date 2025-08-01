@@ -9,12 +9,12 @@ app.get("/", (req, res) => {
   res.send(`
     <h2>📂 لینک‌های دانلود:</h2>
     <ul>
-      <li><a href="/video.mp4" download>دانلود ویدیو</a></li>
+      <li><a href="/audio.mp3" download>دانلود صوت</a></li>
     </ul>
   `);
 });
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(\`Server running on port \${PORT}\`);
 });
