@@ -5,7 +5,7 @@ const fs = require('fs');
 const app = express();
 
 // سرو کردن فایل‌های استاتیک
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'Public')));
 
 // مسیر دانلود داینامیک
 app.get('/download/:filename', (req, res) => {
