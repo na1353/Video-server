@@ -5,12 +5,12 @@ const fs = require('fs');
 const app = express();
 
 // سرو کردن فایل‌های استاتیک
-app.use(express.static(path.join(__dirname, 'Public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // مسیر دانلود داینامیک
 app.get('/download/:filename', (req, res) => {
   const filename = req.params.filename;
-  const filePath = path.join(__dirname, 'Public', filename);
+  const filePath = path.join(__dirname, 'public', filename);
 
   fs.access(filePath, fs.constants.F_OK, (err) => {
     if (err) {
@@ -25,9 +25,9 @@ app.get('/download/:filename', (req, res) => {
   });
 });
 
-// مسیر لیست فایل‌های موجود در پوشه Public
+// مسیر لیست فایل‌های موجود در پوشه public
 app.get('/list', (req, res) => {
-  fs.readdir(path.join(__dirname, 'Public'), (err, files) => {
+  fs.readdir(path.join(__dirname, 'public'), (err, files) => {
     if (err) {
       return res.status(500).send('Error reading directory');
     }
