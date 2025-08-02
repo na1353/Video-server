@@ -25,18 +25,17 @@ app.get('/download/:filename', (req, res) => {
   });
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
-const fs = require('fs');
-const path = require('path');
-
+// مسیر لیست فایل‌های موجود در پوشه public
 app.get('/list', (req, res) => {
   fs.readdir(path.join(__dirname, 'public'), (err, files) => {
     if (err) {
       return res.status(500).send('Error reading directory');
     }
-    res.json(files); // فهرست فایل‌های داخل public را به صورت JSON نشان می‌دهد
+    res.json(files);
   });
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
